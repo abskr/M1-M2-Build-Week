@@ -1,8 +1,28 @@
+body {
+  background-color: #101010;
+  color: #fff;
+}
+
+a {
+  color: #fff
+}
+
+table.table
+ {
+  color: #777777;
+}
+
+.track-title {
+  color: #fff;
+}
+table tr.tracklist-item:hover{
+  background-color: #6e6e6e;
+}
 .whole-container {
   margin-top: 3rem;
 }
 
 .album-cover {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  height: 100%;
 }
