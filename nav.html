@@ -15,15 +15,19 @@
   </head>
   <body>
     <nav class="side-bar">
-      <div class="upper-nav">
-        <div class="logo-div">
-          <a href="#"
-            ><img
-              src="./navImages/logo.svg"
-              style="width: 100px"
-              height="60px"
-              alt=""
-          /></a>
+      <div class="upper-nav navbar--toggleShow">
+        <div class="logo--and--toggle--wrapper">
+          <div id="logo-div" class="logo-div">
+            <a href="#"
+              ><img
+                src="./navImages/logo.svg"
+                style="width: 100px"
+                height="60px"
+                alt=""
+                class="logo"
+            /></a>
+          </div>
+          <div class="navbar--link--toggle"><i class="fas fa-bars"></i></div>
         </div>
 
         <div class="menu">
@@ -56,7 +60,7 @@
         </div>
       </div>
 
-      <div class="lower-nav">
+      <div class="lower--nav">
         <div class="lower--nav--item">
           <div>
             <a href="#"><img src="./navImages/install-1.svg" alt="" /></a>
@@ -104,10 +108,94 @@
           </button>
         </div>
       </div>
+
+      <div class="footer--middle-col">
+        <div class="footer--middle-col--controls">
+          <button
+            class="footer--middle-col--controls footer--middle-col--controls--shuffle"
+          >
+            <i class="fas fa-random"></i>
+          </button>
+
+          <button
+            class="footer--middle-col--controls footer--middle-col--controls--prev"
+          >
+            <i class="fas fa-step-backward"></i>
+          </button>
+
+          <button
+            id="pauseBtn"
+            style="display: none"
+            class="footer--middle-col--controls footer--middle-col--controls--play"
+          >
+            <i class="far fa-2x fa-pause-circle"></i>
+          </button>
+          <button
+            id="playBtn"
+            class="footer--middle-col--controls footer--middle-col--controls--play"
+          >
+            <i class="far fa-2x fa-play-circle"></i>
+          </button>
+          <button
+            class="footer--middle-col--controls footer--middle-col--controls--next"
+          >
+            <i class="fas fa-step-forward"></i>
+          </button>
+          <button
+            class="footer--middle-col--controls footer--middle-col--controls--repeat"
+          >
+            <i class="fas fa-retweet"></i>
+          </button>
+        </div>
+        <div class="footer-middle-col--range--wrapper">
+          <div><span class="footer-middle-col--range--text">0:00</span></div>
+          <input type="range" class="footer--middle-col--range--input" />
+          <div><span class="footer-middle-col--range--text">7:15</span></div>
+        </div>
+      </div>
+
+      <div class="footer--right-col">
+        <div class="footer--right-col--controls">
+          <button class="footer--right-col-controls--icon">
+            <i class="fas fa-sliders-h"></i>
+          </button>
+          <button class="footer--right-col-controls--icon">
+            <i class="fas fa-mobile-alt"></i>
+          </button>
+          <button class="footer--right-col-controls--icon">
+            <i class="fas fa-volume-up"></i>
+          </button>
+          <input type="range" class="footer--right-col--range--input" />
+        </div>
+      </div>
     </footer>
     <script
       src="https://kit.fontawesome.com/7e4e45b727.js"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      function classToggle() {
+        const navItems = document.querySelectorAll(".menu");
+
+        navItems.forEach((item) => item.classList.toggle("navbar--toggleShow"));
+      }
+
+      document
+        .querySelector(".navbar--link--toggle")
+        .addEventListener("click", classToggle);
+      let pauseBtn = document.getElementById("pauseBtn");
+      let playBtn = document.getElementById("playBtn");
+      playBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        playBtn.style.display = "none";
+        pauseBtn.style.display = "inline";
+      });
+      pauseBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        playBtn.style.display = "inline";
+        pauseBtn.style.display = "none";
+      });
+    </script>
   </body>
 </html>
