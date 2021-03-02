@@ -388,6 +388,16 @@ footer {
 }
 
 @media only screen and (max-width: 301px) {
+  .side-bar {
+    min-width: 280px;
+  }
+
+  footer {
+    min-width: 280px;
+    position: fixed;
+    bottom: 0;
+  }
+
   .footer--middle-col--controls {
     margin-right: 5px;
   }
