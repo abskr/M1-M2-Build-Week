@@ -2,17 +2,24 @@ html {
   font-size: 16px;
 }
 
+@font-face {
+  font-family: "Circular";
+  src: url(/assets/fonts/lineto-circular-pro-book.ttf);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   color: #fff;
   background: rgb(35, 32, 107);
+
+  font-family: "Circular", sans-serif;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Circular";
 }
 
 a {
@@ -301,7 +308,7 @@ main {
   position: relative;
   left: 200px;
   width: 80vw;
-  height: calc(100% -100px);
+
   overflow-y: scroll;
   overflow-x: hidden;
   text-align: right;
@@ -318,7 +325,21 @@ html {
 
 .container-div {
   margin: 10px auto;
-  padding: 0;
+  padding-left: 50px;
+  padding-top: 30px;
+}
+
+#carouselExampleSlidesOnly {
+  background: rgb(35, 32, 107);
+}
+
+.selected {
+  color: white !important;
+  border-bottom: 1px solid lightgreen;
+}
+
+.content-nav {
+  margin-bottom: 50px;
 }
 
 .content-nav ul {
@@ -331,6 +352,33 @@ html {
   list-style-type: none;
   color: rgb(156, 150, 150);
   font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.content-nav ul li:hover {
+  color: white;
+  font-size: 0.8rem;
+}
+
+/* .nav-item-active::after {
+  color: white;
+  content: "";
+  display: inherit;
+  width: 50%;
+  margin: 0 auto;
+  border-bottom: 1px solid lightgreen;
+} */
+
+.container p {
+  text-align: center;
+  color: aliceblue;
+  padding: 5px;
+  font-size: 0.7rem;
+}
+
+.selected:focus {
+  color: white !important;
+  border-bottom: 1px solid lightgreen;
 }
 
 @media only screen and (max-width: 992px) {
@@ -413,6 +461,12 @@ html {
     text-align: center;
   }
 
+  .container-div {
+    margin: 10px auto;
+    padding-left: 10px;
+    padding: 10px 10px 70px 10px;
+  }
+
   .content-nav ul {
     display: flex;
     justify-content: space-around;
@@ -422,7 +476,7 @@ html {
   .content-nav ul li {
     list-style-type: none;
     color: rgb(156, 150, 150);
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -435,6 +489,22 @@ html {
     font-size: 1.5rem !important;
     font-weight: 700;
     padding-left: 19px;
+  }
+
+  .container p {
+    text-align: center;
+    color: aliceblue;
+    padding: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.1rem;
+  }
+
+  .content-nav ul li {
+    list-style-type: none;
+    color: rgb(156, 150, 150);
+    font-size: 0.6rem;
+    margin-right: 5px;
   }
 }
 
@@ -510,8 +580,13 @@ html {
   }
 
   main img {
-    width: 100vw;
+    width: 70vw;
     margin-top: 10px;
+  }
+
+  .container-div {
+    margin: 10px auto;
+    padding: 10px 30px 5px 5px;
   }
 
   .content-nav ul {
@@ -524,6 +599,12 @@ html {
   .content-nav ul li {
     list-style-type: none;
     color: rgb(156, 150, 150);
+    font-size: 1rem;
+  }
+
+  .container p {
+    text-align: center;
+    padding: 5px;
     font-size: 1rem;
   }
 }
@@ -565,7 +646,7 @@ html {
   }
 }
 
-.active {
+.active-link {
   border-bottom: 1px solid white;
   color: #fff;
 }
