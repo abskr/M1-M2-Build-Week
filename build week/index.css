@@ -390,7 +390,7 @@ svg path {
 @media only screen and (max-width: 991px) {
   .side-bar {
     width: 100%;
-    height: 50%;
+
     position: sticky;
     display: flex;
 
@@ -409,8 +409,17 @@ svg path {
     justify-content: flex-start;
   }
 }
+@media only screen and (max-width: 998px) {
+  .side-bar {
+    width: 100%;
 
-@media only screen and (max-width: 768px) {
+    position: fixed;
+    display: flex;
+
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 767px) {
   .side-bar {
     width: 100%;
     height: 50%;
