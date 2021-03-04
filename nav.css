@@ -7,6 +7,7 @@ body {
   padding: 0;
   margin: 0;
   color: #fff;
+  background: rgb(35, 32, 107);
 }
 
 * {
@@ -64,11 +65,6 @@ a:hover {
   font-size: 0.88rem;
   font-weight: 700;
   margin-left: 15px;
-}
-
-main {
-  max-height: calc(100vh - 90px);
-  min-height: calc(100vh -90px);
 }
 
 footer {
@@ -193,6 +189,7 @@ footer {
 
 svg:hover path {
   fill: white;
+  cursor: pointer;
 }
 
 svg path {
@@ -300,13 +297,45 @@ svg path {
   display: none;
 }
 
-@media only screen and (max-width: 768px) {
+main {
+  position: relative;
+  left: 200px;
+  width: 80%;
+  height: calc(100% -100px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.content-nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-nav ul li {
+  list-style-type: none;
+  color: rgb(156, 150, 150);
+  margin-right: 50px;
+  font-size: 0.6rem;
+}
+
+@media only screen and (max-width: 992px) {
   .side-bar {
     width: 100%;
     height: auto;
     position: fixed;
     display: flex;
-
+    z-index: 1;
     justify-content: space-between;
   }
 
@@ -327,6 +356,7 @@ svg path {
     display: flex;
     margin-top: 5px;
     margin-left: 15px;
+    z-index: 1;
   }
 
   .menu--item {
@@ -342,9 +372,11 @@ svg path {
   footer {
     width: 100%;
     height: auto;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
+    right: 0;
+    z-index: 1;
     font-size: 0.8rem;
     display: block;
   }
@@ -361,9 +393,48 @@ svg path {
   .footer--right-col {
     display: none;
   }
+
+  .container-fluid {
+    width: 100% !important;
+    padding-bottom: 100px;
+  }
+
+  main {
+    position: relative;
+    top: 130px;
+    left: 0;
+
+    display: block;
+    height: 100%;
+    overflow-y: scroll;
+    text-align: center;
+    padding-right: -50px;
+  }
+
+  .content-nav {
+    font-size: 1rem;
+  }
+
+  .content-nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .content-nav ul li {
+    list-style-type: none;
+    color: rgb(156, 150, 150);
+    margin-right: 20px;
+    font-size: 0.8rem;
+  }
 }
 
 @media only screen and (max-width: 576px) {
+  .nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
   .side-bar {
     position: relative;
   }
@@ -378,8 +449,9 @@ svg path {
   }
 
   .menu {
-    margin-left: 15px;
+    /* z-index: 1; */
     display: none;
+    background-color: #000;
   }
 
   .lower--nav {
@@ -390,12 +462,37 @@ svg path {
     flex-direction: column;
   }
 
+  footer {
+    min-width: 280px;
+    position: sticky;
+    bottom: 0;
+  }
+
   .footer-middle-col--range--wrapper {
     display: none;
   }
 
   .footer--right-col {
     display: none;
+  }
+
+  main {
+    position: relative;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  main h3 {
+    width: 100vw;
+    font-size: 1.4rem !important;
+  }
+
+  main img {
+    width: 60vw;
+    margin-top: 10px;
   }
 }
 
@@ -414,15 +511,6 @@ svg path {
     margin-right: 5px;
   }
 
-  .footer--middle-col--range--input {
-    width: 80%;
-    -webkit-appearance: none;
-    background-color: #b3b3b3;
-    border-radius: 2px;
-    margin-left: 4px;
-    margin-right: 4px;
-  }
-
   .footer--right-col,
   .footer--left-col {
     display: none;
@@ -438,6 +526,10 @@ svg path {
 
   .footer--right-col {
     display: none;
+  }
+  main h3 {
+    width: 100vw;
+    font-size: 1rem !important;
   }
 }
 
