@@ -16,7 +16,7 @@
   margin-right: 15px;
 }
 
-.nav-items-active > .nav-links::after {
+.nav-items-active::after {
   color: white;
   content: "";
   display: inherit;
@@ -72,7 +72,7 @@ html {
 }
 
 body {
-  background-color: rgb(18, 225, 240);
+  background-color: rgba(52, 94, 129, 0.973);
 
   color: #fff;
 }
@@ -102,6 +102,7 @@ a:hover {
 }
 .container-fluid {
   height: 100%;
+  padding-left: 150px;
 }
 .first-row {
   position: relative;
@@ -146,7 +147,10 @@ a:hover {
   padding-left: calc(200px + 2rem);
   padding: right 2rem;
 }
-
+h6 {
+  display: flex;
+  justify-content: center;
+}
 .footer-container {
   position: sticky;
   bottom: 0;
@@ -429,6 +433,10 @@ svg path {
     font-weight: 700;
     margin-left: 5px;
   }
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .row {
     margin: 0;
   }
@@ -456,18 +464,68 @@ svg path {
     display: none;
   }
 }
-@media only screen and (max-width: 978px) {
+@media only screen and (max-width: 1073px) {
+  #row {
+    height: 60%;
+  }
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   #row {
     height: 40%;
   }
 }
-@media only screen and (max-width: 978px) {
+
+h1 {
+  font-size: 1rem;
+}
+h2 {
+  margin-top: 50px;
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.6rem;
+}
+@media only screen and (max-width: 766px) {
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #row {
+    height: 30%;
+  }
   h1 {
-    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  h2 {
+    display: flex;
+    justify-content: center;
+  }
+  h6 {
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 766px) {
+  .navbarUl {
+    display: block;
   }
 }
 
 @media only screen and (max-width: 576px) {
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .side-bar {
     min-width: 280px;
 
@@ -517,6 +575,14 @@ svg path {
 }
 
 @media only screen and (max-width: 301px) {
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #row {
+    height: 45%;
+  }
+
   .side-bar {
     min-width: 280px;
 
