@@ -71,10 +71,9 @@ html {
   font-size: 16px;
 }
 
-html,
 body {
-  padding: 0;
-  margin: 0;
+  background-color: rgb(18, 225, 240);
+
   color: #fff;
 }
 
@@ -430,6 +429,9 @@ svg path {
     font-weight: 700;
     margin-left: 5px;
   }
+  .row {
+    margin: 0;
+  }
 
   footer {
     width: 100%;
@@ -454,6 +456,16 @@ svg path {
     display: none;
   }
 }
+@media only screen and (max-width: 978px) {
+  #row {
+    height: 40%;
+  }
+}
+@media only screen and (max-width: 978px) {
+  h1 {
+    font-size: 1rem;
+  }
+}
 
 @media only screen and (max-width: 576px) {
   .side-bar {
@@ -461,6 +473,9 @@ svg path {
 
     top: 0;
     right: 0;
+  }
+  .navbarUl li {
+    margin-right: 0;
   }
 
   .navbar--link--toggle {
@@ -507,6 +522,9 @@ svg path {
 
     top: 0;
     right: 0;
+  }
+  .navbarUl li {
+    margin-right: 0;
   }
 
   footer {
