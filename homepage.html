@@ -850,16 +850,22 @@
             <div class="footer--left-col--song--img--pull-up">
               <i class="fas fa-chevron-up"></i>
             </div>
-            <img src="https://picsum.photos/156/156" alt="" />
+            <img src="" alt="" id="song-image" height="156px" width="156px" />
           </div>
           <div class="footer--left-col--song--details">
             <div class="footer--left-col--song--details--wrapper">
-              <a href="#" class="footer--left-col--song--details--title"
+              <a
+                href="#"
+                class="footer--left-col--song--details--title"
+                id="song-title"
                 >Song For My Father</a
               >
             </div>
             <div class="footer-left-col--song--details--wrapper">
-              <a href="#" class="footer--left-col--song--details--artist"
+              <a
+                href="#"
+                class="footer--left-col--song--details--artist"
+                id="artist-name"
                 >Artist</a
               >
             </div>
@@ -925,6 +931,8 @@
 
           <button
             class="footer--middle-col--controls footer--middle-col--controls--prev"
+            id="prev"
+            onclick="previousSong()"
           >
             <svg
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -946,6 +954,7 @@
             id="pauseBtn"
             style="display: none"
             class="footer--middle-col--controls footer--middle-col--controls--play"
+            onclick="pauseSong()"
           >
             <svg
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -963,6 +972,7 @@
           <button
             id="playBtn"
             class="footer--middle-col--controls footer--middle-col--controls--play"
+            onclick="playSong()"
           >
             <svg
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -981,6 +991,8 @@
           </button>
           <button
             class="footer--middle-col--controls footer--middle-col--controls--next"
+            id="next"
+            onclick="nextSong()"
           >
             <svg
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1017,9 +1029,26 @@
           </button>
         </div>
         <div class="footer-middle-col--range--wrapper">
-          <div><span class="footer-middle-col--range--text">0:00</span></div>
-          <input type="range" class="footer--middle-col--range--input" />
-          <div><span class="footer-middle-col--range--text">7:15</span></div>
+          <div>
+            <span class="footer-middle-col--range--text" id="currentDuration"
+              >0:00</span
+            >
+          </div>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            class="footer--middle-col--range--input"
+            id="durationSlider"
+            onchange="changeDuration()"
+          />
+          <div>
+            <span
+              class="footer-middle-col--range--text"
+              id="maxDuration"
+            ></span>
+          </div>
         </div>
       </div>
 
@@ -1031,7 +1060,11 @@
           <button class="footer--right-col-controls--icon">
             <i class="fas fa-mobile-alt"></i>
           </button>
-          <button class="footer--right-col-controls--icon">
+          <button
+            class="footer--right-col-controls--icon"
+            id="volumeIcon"
+            onclick="muteVolume()"
+          >
             <svg
               xmlns:xlink="http://www.w3.org/1999/xlink"
               xmlns="http://www.w3.org/2000/svg"
@@ -1039,7 +1072,6 @@
               height="16"
               width="16"
               aria-label="Volume high"
-              id="volume-icon"
               viewBox="0 0 16 16"
               class="Svg-ulyrgf-0 hJgLcF"
             >
@@ -1049,7 +1081,39 @@
               ></path>
             </svg>
           </button>
-          <input type="range" class="footer--right-col--range--input" />
+          <button
+            class="footer--right-col-controls--icon"
+            id="volumeMuteIcon"
+            style="display: none"
+            onclick="muteVolume()"
+          >
+            <svg
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns="http://www.w3.org/2000/svg"
+              role="presentation"
+              height="16"
+              width="16"
+              aria-label="Volume off"
+              id="volume-icon"
+              viewBox="0 0 16 16"
+              class="Svg-ulyrgf-0 hJgLcF"
+            >
+              <path
+                d="M0 5v6h2.804L8 14V2L2.804 5H0zm7-1.268v8.536L3.072 10H1V6h2.072L7 3.732zm8.623 2.121l-.707-.707-2.147 2.147-2.146-2.147-.707.707L12.062 8l-2.146 2.146.707.707 2.146-2.147 2.147 2.147.707-.707L13.477 8l2.146-2.147z"
+                fill="#B3B3B3"
+              ></path>
+            </svg>
+          </button>
+
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            class="footer--right-col--range--input"
+            id="volumeSlider"
+            onchange="changeVolume()"
+          />
         </div>
       </div>
     </footer>
@@ -1115,6 +1179,7 @@
         });
       });
     </script>
+    <script src="script.js"></script>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script
