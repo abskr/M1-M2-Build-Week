@@ -468,6 +468,14 @@ svg path {
     position: relative;
   }
 
+  .album-container {
+    margin-bottom: 6.5rem;
+  }
+
+  .jumbotron {
+    margin-top: 1rem;
+  }
+
   .navbar--link--toggle {
     align-self: flex-end;
     display: initial;
