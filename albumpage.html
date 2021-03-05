@@ -81,16 +81,25 @@
 
         <div class="lower--nav">
           <div class="lower--nav--item">
-            <div>
-              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" role="img" height="24"
-                width="24" viewBox="0 0 24 24" class="Svg-ulyrgf-0 hJgLcF">
-                <path
-                  d="M11.5 0C5.149 0 0 5.148 0 11.5 0 17.851 5.149 23 11.5 23S23 17.851 23 11.5C23 5.148 17.851 0 11.5 0zm0 22C5.71 22 1 17.29 1 11.5S5.71 1 11.5 1 22 5.71 22 11.5 17.29 22 11.5 22zm.499-6.842V5h-1v10.149l-3.418-3.975-.758.652 4.678 5.44 4.694-5.439-.757-.653-3.439 3.984z"
-                  fill="#B3B3B3"></path>
-              </svg>
+            <div class="sign-up--buttons--wrapper">
+              <div class="sign-up--buttons">
+                <input type="button" id="sign-up" value="SIGN UP" />
+              </div>
+              <div class="sign-up--buttons">
+                <input type="button" id="login" value="LOGIN" />
+              </div>
             </div>
-            <div>
-              <a href="#"><span class="menu--item--text">Install App</span></a>
+            <div class="cookie--and--privacy--div">
+              <div>
+                <p>
+                  Cookie <br />
+                  Policy
+                </p>
+              </div>
+              <div id="border--div"></div>
+              <div>
+                <p>Privacy</p>
+              </div>
             </div>
           </div>
         </div>
@@ -299,14 +308,14 @@
                 <div class="footer--left-col--song--img--pull-up">
                   <i class="fas fa-chevron-up"></i>
                 </div>
-                <img src="https://picsum.photos/156/156" alt="" />
+                <img src="" alt="" id="song-image" height="156px" width="156px" />
               </div>
               <div class="footer--left-col--song--details">
                 <div class="footer--left-col--song--details--wrapper">
-                  <a href="#" class="footer--left-col--song--details--title">Song For My Father</a>
+                  <a href="#" class="footer--left-col--song--details--title" id="song-title">Song For My Father</a>
                 </div>
                 <div class="footer-left-col--song--details--wrapper">
-                  <a href="#" class="footer--left-col--song--details--artist">Artist</a>
+                  <a href="#" class="footer--left-col--song--details--artist" id="artist-name">Artist</a>
                 </div>
               </div>
             </div>
@@ -343,7 +352,8 @@
                 </svg>
               </button>
 
-              <button class="footer--middle-col--controls footer--middle-col--controls--prev">
+              <button class="footer--middle-col--controls footer--middle-col--controls--prev" id="prev"
+                onclick="previousSong()">
                 <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" role="img"
                   height="16" width="16" viewBox="0 0 16 16" class="Svg-ulyrgf-0 hJgLcF">
                   <path d="M13 2.5L5 7.119V3H3v10h2V8.881l8 4.619z" fill="#B3B3B3"></path>
@@ -351,20 +361,22 @@
               </button>
 
               <button id="pauseBtn" style="display: none"
-                class="footer--middle-col--controls footer--middle-col--controls--play">
+                class="footer--middle-col--controls footer--middle-col--controls--play" onclick="pauseSong()">
                 <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="16"
                   role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
                   <rect x="5" y="3" width="4" height="18" fill="#FFFFFF"></rect>
                   <rect x="15" y="3" width="4" height="18" fill="#FFFFFF"></rect>
                 </svg>
               </button>
-              <button id="playBtn" class="footer--middle-col--controls footer--middle-col--controls--play">
+              <button id="playBtn" class="footer--middle-col--controls footer--middle-col--controls--play"
+                onclick="playSong()">
                 <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="16"
                   role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
                   <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="#FFFFFF"></polygon>
                 </svg>
               </button>
-              <button class="footer--middle-col--controls footer--middle-col--controls--next">
+              <button class="footer--middle-col--controls footer--middle-col--controls--next" id="next"
+                onclick="nextSong()">
                 <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" role="img"
                   height="16" width="16" viewBox="0 0 16 16" class="Svg-ulyrgf-0 hJgLcF">
                   <path d="M11 3v4.119L3 2.5v11l8-4.619V13h2V3z" fill="#B3B3B3"></path>
@@ -380,9 +392,14 @@
               </button>
             </div>
             <div class="footer-middle-col--range--wrapper">
-              <div><span class="footer-middle-col--range--text">0:00</span></div>
-              <input type="range" class="footer--middle-col--range--input" />
-              <div><span class="footer-middle-col--range--text">7:15</span></div>
+              <div>
+                <span class="footer-middle-col--range--text" id="currentDuration">0:00</span>
+              </div>
+              <input type="range" min="0" max="100" value="0" class="footer--middle-col--range--input"
+                id="durationSlider" onchange="changeDuration()" />
+              <div>
+                <span class="footer-middle-col--range--text" id="maxDuration"></span>
+              </div>
             </div>
           </div>
 
@@ -394,16 +411,27 @@
               <button class="footer--right-col-controls--icon">
                 <i class="fas fa-mobile-alt"></i>
               </button>
-              <button class="footer--right-col-controls--icon">
+              <button class="footer--right-col-controls--icon" id="volumeIcon" onclick="muteVolume()">
                 <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" role="presentation"
-                  height="16" width="16" aria-label="Volume high" id="volume-icon" viewBox="0 0 16 16"
-                  class="Svg-ulyrgf-0 hJgLcF">
+                  height="16" width="16" aria-label="Volume high" viewBox="0 0 16 16" class="Svg-ulyrgf-0 hJgLcF">
                   <path
                     d="M12.945 1.379l-.652.763c1.577 1.462 2.57 3.544 2.57 5.858s-.994 4.396-2.57 5.858l.651.763a8.966 8.966 0 00.001-13.242zm-2.272 2.66l-.651.763a4.484 4.484 0 01-.001 6.397l.651.763c1.04-1 1.691-2.404 1.691-3.961s-.65-2.962-1.69-3.962zM0 5v6h2.804L8 14V2L2.804 5H0zm7-1.268v8.536L3.072 10H1V6h2.072L7 3.732z"
                     fill="#B3B3B3"></path>
                 </svg>
               </button>
-              <input type="range" class="footer--right-col--range--input" />
+              <button class="footer--right-col-controls--icon" id="volumeMuteIcon" style="display: none"
+                onclick="muteVolume()">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" role="presentation"
+                  height="16" width="16" aria-label="Volume off" id="volume-icon" viewBox="0 0 16 16"
+                  class="Svg-ulyrgf-0 hJgLcF">
+                  <path
+                    d="M0 5v6h2.804L8 14V2L2.804 5H0zm7-1.268v8.536L3.072 10H1V6h2.072L7 3.732zm8.623 2.121l-.707-.707-2.147 2.147-2.146-2.147-.707.707L12.062 8l-2.146 2.146.707.707 2.146-2.147 2.147 2.147.707-.707L13.477 8l2.146-2.147z"
+                    fill="#B3B3B3"></path>
+                </svg>
+              </button>
+
+              <input type="range" min="0" max="100" value="10" class="footer--right-col--range--input" id="volumeSlider"
+                onchange="changeVolume()" />
             </div>
           </div>
         </footer>
@@ -412,7 +440,7 @@
   </div>
 
 
-
+  <script src="script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
