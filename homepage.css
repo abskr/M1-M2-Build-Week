@@ -62,6 +62,10 @@ a:hover {
   position: relative; /* Needed for the .active state to add the background */
 }
 
+.lower--nav--item {
+  flex-direction: column;
+}
+
 .menu--item {
   margin-top: 5px;
 }
@@ -70,6 +74,72 @@ a:hover {
   font-size: 0.88rem;
   font-weight: 700;
   margin-left: 15px;
+}
+
+.sign-up--buttons--wrapper {
+  width: 150px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
+  justify-content: space-between;
+}
+
+#sign-up {
+  font-size: 0.6rem;
+  font-weight: 700;
+  background: white;
+  outline: none;
+  padding: 5px 0px;
+  width: 100%;
+  border-radius: 15px;
+  border: none;
+  margin-bottom: 2px;
+  transition: all ease 0.3s;
+}
+#login {
+  font-size: 0.6rem;
+  color: white;
+  font-weight: 700;
+  background: transparent;
+  outline: none;
+  padding: 5px 0px;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid white;
+  transition: all ease 0.3s;
+}
+
+#login:hover {
+  color: black;
+  background: white;
+  outline: black;
+}
+#sign-up:hover {
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+}
+
+.cookie--and--privacy--div {
+  margin: 0 auto;
+  font-size: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 10px;
+}
+
+.cookie--and--privacy--div p:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#border--div {
+  width: 0;
+  height: 10px;
+  border-right: 1px solid #777575;
+  margin: 2px 10px 0 10px;
 }
 
 footer {
@@ -87,6 +157,7 @@ footer {
 }
 
 .footer--left-col {
+  width: 300px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -192,6 +263,15 @@ footer {
   transition: all ease 0.3s;
 }
 
+#playBtn svg,
+#pauseBtn svg {
+  border-radius: 50%;
+  border: 1px solid white;
+  padding: 3px;
+  height: 24px;
+  width: 24px;
+}
+
 svg:hover path {
   fill: white;
   cursor: pointer;
@@ -202,8 +282,9 @@ svg path {
 }
 
 .footer-middle-col--range--wrapper {
+  width: 270px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -212,31 +293,32 @@ svg path {
 }
 
 .footer--middle-col--range--input {
-  width: 250px;
+  width: 260px;
   -webkit-appearance: none;
   background-color: #b3b3b3;
   border-radius: 2px;
   margin-left: 4px;
   margin-right: 4px;
-  transition: all ease 0.3s;
+}
+
+.footer--middle-col--range--input:hover {
+  cursor: pointer;
 }
 
 .footer--middle-col--range--input::-webkit-slider-runnable-track {
-  height: 4px;
-  color: blue;
+  height: 6px;
+  background: #b3b3b3;
 }
 
 .footer--middle-col--range--input::-webkit-slider-thumb {
   width: 4px;
   -webkit-appearance: none;
-  height: 4px;
+  height: 5px;
   cursor: pointer;
-  background: black;
+  background: white;
+  border-radius: 50%;
 }
 
-.footer--middle-col--range--input:hover {
-  background-color: #fff;
-}
 .footer--middle-col--range--input:focus {
   outline: none;
 }
@@ -280,20 +362,17 @@ svg path {
 
 .footer--right-col--range--input::-webkit-slider-runnable-track {
   height: 4px;
-  color: blue;
+  background: #b3b3b3;
 }
 
 .footer--right-col--range--input::-webkit-slider-thumb {
   width: 4px;
   -webkit-appearance: none;
-  height: 4px;
+  height: 5px;
   cursor: pointer;
-  background: black;
+  background: white;
 }
 
-.footer--right-col--range--input:hover {
-  background-color: #fff;
-}
 .footer--right-col--range--input:focus {
   outline: none;
 }
@@ -310,6 +389,14 @@ main {
   overflow-y: scroll;
   overflow-x: hidden;
   text-align: right;
+}
+
+main img {
+  transition: all ease 0.3s;
+}
+
+main img:hover {
+  opacity: 0.7;
 }
 
 html {
@@ -431,14 +518,15 @@ html {
     display: block;
   }
 
-  .footer--left-col,
-  .footer--right-col {
-    margin: 10px auto;
+  .footer--left-col {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 
-  .footer-middle-col--range--wrapper {
+  /* .footer-middle-col--range--wrapper {
     display: none;
-  }
+  } */
 
   .footer--right-col {
     display: none;
@@ -541,7 +629,7 @@ html {
 
   footer {
     min-width: 280px;
-    position: sticky;
+    position: fixed;
     bottom: 0;
   }
 
@@ -584,7 +672,7 @@ html {
 
   .container-div {
     margin: 10px auto;
-    padding: 10px 30px 5px 5px;
+    padding: 10px 30px 35px 5px;
   }
 
   .content-nav ul {
@@ -639,8 +727,17 @@ html {
     display: none;
   }
   main h3 {
-    width: 100vw;
     font-size: 1rem !important;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px !important;
+  }
+  .content-nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
