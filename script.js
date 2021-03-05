@@ -12,8 +12,6 @@ let volumeIcon = document.querySelector("#volumeIcon");
 let volumeMuteIcon = document.querySelector("#volumeMuteIcon");
 let volumeSlider = document.querySelector("#volumeSlider");
 
-let timer;
-
 let songId = 0;
 let songPlaying = false;
 let track = document.createElement("audio");
@@ -53,7 +51,7 @@ let songs = [
 
 function loadTrack(songId) {
   resetValues();
-  setInterval(range_slider, 1000);
+  setInterval(range_slider, 1500);
   track.src = songs[songId].path;
   songTitle.innerHTML = songs[songId].name;
   artistName.innerHTML = songs[songId].singer;
@@ -80,13 +78,11 @@ function muteVolume() {
 }
 
 function playSong() {
-  maxDuration.textContent = "00:00";
   play.style.display = "none";
   pause.style.display = "inline";
   songPlaying = true;
 
   track.play();
-  maxDuration.textContent = formatTime(track.duration);
 }
 
 function pauseSong() {
@@ -151,6 +147,10 @@ function formatTime(seconds) {
 
 function resetValues() {
   currentDuration.textContent = "00:00";
-  maxDuration.textContent = "00:00";
+  if (!isNaN(track.duration)) {
+    maxDuration.innerHTML = formatTime(track.duration);
+  } else {
+    maxDuration.innerHTML = `2:46`;
+  }
   durationSlider.value = 0;
 }
