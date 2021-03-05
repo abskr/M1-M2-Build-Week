@@ -52,8 +52,8 @@ let songs = [
 ];
 
 function loadTrack(songId) {
-  clearInterval(timer);
   resetValues();
+  setInterval(range_slider, 1000);
   track.src = songs[songId].path;
   songTitle.innerHTML = songs[songId].name;
   artistName.innerHTML = songs[songId].singer;
@@ -80,11 +80,13 @@ function muteVolume() {
 }
 
 function playSong() {
+  maxDuration.textContent = "00:00";
   play.style.display = "none";
   pause.style.display = "inline";
   songPlaying = true;
 
   track.play();
+  maxDuration.textContent = formatTime(track.duration);
 }
 
 function pauseSong() {
@@ -129,6 +131,7 @@ function range_slider() {
   if (!isNaN(track.duration)) {
     position = track.currentTime * (100 / track.duration);
     durationSlider.value = position;
+    currentDuration.textContent = formatTime(track.currentTime);
   }
 
   if (track.ended) {
