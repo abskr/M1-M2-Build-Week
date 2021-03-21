@@ -10,6 +10,8 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css" />
     <title>Spotify</title>
   </head>
@@ -76,7 +78,7 @@
                 </svg>
               </div>
               <div>
-                <a href="#"><span class="menu--item--text">Search</span></a>
+                <a href="#"><span class="menu--item--text" id="searched" onclick="searchbtn()">Search</span></a>
               </div>
             </div>
             <div class="menu--item">
@@ -139,7 +141,15 @@
       
     
     <!-- ------------------------------------------------------------Body---------------------------------------------- -->
+          
+                <a id="next1" href="#" class="previous round">&#8249;</a>
+                <a id="prev1" href="#" class="next round">&#8250;</a>
+                <form id="ex" class="example ml-1" style="display: none;">
+                  <input type="text" placeholder="Search.." name="search">
+                  <button type="submit" onclick="search()"><i class="fa fa-search"></i></button>
+                </form>
 
+              
                 <div class="col-12 content-column"> 
                     <!--<div class="__row">
                         <div class="col-12">-->
@@ -565,5 +575,6 @@
       });
     </script>
     <script src="script.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

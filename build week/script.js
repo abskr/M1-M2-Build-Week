@@ -1,3 +1,11 @@
+
+ 
+const searchbtn=()=>{
+  const searched = document.getElementById("searched")
+  const ex= document.getElementById("ex")
+  ex.style.display = "block"
+  searched.addEventListener("click", searchbtn)
+}
 let previous = document.querySelector("#prev");
 let play = document.querySelector("#playBtn");
 let pause = document.querySelector("#pauseBtn");
