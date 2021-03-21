@@ -1,0 +1,507 @@
+body {
+  background-color: #101010;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #fff;
+}
+
+table.table {
+  color: #777777;
+}
+
+.trackslist-col {
+  height: 87vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.trackslist-col::-webkit-scrollbar {
+  display: none;
+}
+
+.track-title {
+  color: #fff;
+}
+tr.tacklist-item:hover {
+  background-color: #464646;
+}
+
+.container-fluid.main-container {
+  height: 90vh;
+}
+
+.album-cover {
+  width: 70%;
+  height: 70%;
+}
+
+/* Getrit's SideNav */
+
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all ease 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.menu--item--logos:hover {
+  opacity: 0.8;
+}
+
+.navbar--link--toggle {
+  display: none;
+}
+
+.side-bar {
+  width: 200px;
+  height: 90vh;
+  background-color: #000;
+  padding: 15px 15px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.menu {
+  display: initial;
+}
+
+.menu--item,
+.lower--nav--item {
+  color: grey;
+  font-size: 1.5rem;
+  display: flex;
+  position: relative;
+  /* Needed for the .active state to add the background */
+}
+
+.menu--item {
+  margin-top: 5px;
+}
+
+.menu--item--text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-left: 15px;
+}
+
+main {
+  max-height: calc(100vh - 90px);
+  min-height: calc(100vh -90px);
+}
+
+.footer-container {
+  position: sticky;
+  bottom: 0;
+}
+footer {
+  width: 100%;
+  height: 10vh;
+  border-top: 1px solid #000;
+  background-color: rgba(24, 24, 24, 1);
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer--left-col {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.footer--left-col--song {
+  display: flex;
+}
+
+.footer--left-col--song--img {
+  margin-right: 14px;
+  display: flex;
+  position: relative;
+}
+
+.footer--left-col--song--img img {
+  height: 56px;
+  width: 56px;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.footer--left-col--song--img--pull-up {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #000;
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #b3b3b3;
+  transition: all ease 0.3s;
+}
+
+.footer--left-col--song--img:hover .footer--left-col--song--img--pull-up {
+  display: flex;
+}
+
+.footer--left-col--song--details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.footer--left-col--song--details--title {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+  transition: all ease 0.3s;
+}
+
+.footer--left-col--song--details--artist {
+  font-size: 0.8rem;
+  color: #b3b3b3;
+  transition: all ease 0.3s;
+}
+
+.footer--left-col--song--details--title:hover,
+.footer--left-col--song--details--artist:hover {
+  color: #fff;
+}
+
+.footer--left-col--actions--favorite {
+  background: transparent;
+  color: #b3b3b3;
+  outline: 0;
+  border: 0;
+}
+
+.footer--left-col--actions--cast {
+  background: transparent;
+  color: #b3b3b3;
+  outline: 0;
+  border: 0;
+  transition: all ease 0.3s;
+}
+
+.footer--left-col--actions--favorite:hover,
+.footer--left-col--actions--cast:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.footer--middle-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.footer--middle-col--controls {
+  background: transparent;
+  outline: 0;
+  color: #b3b3b3;
+  border: 0;
+  margin-right: 10px;
+  font-size: 1.2rem;
+  transition: all ease 0.3s;
+}
+
+svg:hover path {
+  fill: white;
+}
+
+svg path {
+  transition: all ease 0.3s;
+}
+
+.footer-middle-col--range--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-middle-col--range--text {
+  font-size: 0.7rem;
+}
+
+.footer--middle-col--range--input {
+  width: 250px;
+  -webkit-appearance: none;
+  background-color: #b3b3b3;
+  border-radius: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
+  transition: all ease 0.3s;
+}
+
+.footer--middle-col--range--input::-webkit-slider-runnable-track {
+  height: 4px;
+  color: blue;
+}
+
+.footer--middle-col--range--input::-webkit-slider-thumb {
+  width: 4px;
+  -webkit-appearance: none;
+  height: 4px;
+  cursor: pointer;
+  background: black;
+}
+
+.footer--middle-col--range--input:hover {
+  background-color: #fff;
+}
+
+.footer--middle-col--range--input:focus {
+  outline: none;
+}
+
+.footer--right-col {
+  display: flex;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer--right-col--controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer--right-col-controls--icon {
+  background: transparent;
+  outline: 0;
+  border: 0;
+  color: #b3b3b3;
+  margin-right: 5px;
+  transition: all ease 0.3s;
+}
+
+.footer--right-col-controls--icon:hover {
+  color: #fff;
+}
+
+.footer--right-col--range--input {
+  overflow: hidden;
+  width: 40px;
+  -webkit-appearance: none;
+  background-color: #b3b3b3;
+  border-radius: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
+  transition: all ease 0.3s;
+}
+
+.footer--right-col--range--input::-webkit-slider-runnable-track {
+  height: 4px;
+  color: blue;
+}
+
+.footer--right-col--range--input::-webkit-slider-thumb {
+  width: 4px;
+  -webkit-appearance: none;
+  height: 4px;
+  cursor: pointer;
+  background: black;
+}
+
+.footer--right-col--range--input:hover {
+  background-color: #fff;
+}
+
+.footer--right-col--range--input:focus {
+  outline: none;
+}
+
+.navbar--link--toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .side-bar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    display: flex;
+
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin-top: -5px;
+    margin-right: 20px;
+  }
+
+  .lower--nav {
+    display: none;
+  }
+
+  .upper-nav {
+    display: flex;
+  }
+
+  .menu {
+    display: flex;
+    margin-top: 5px;
+    margin-left: 15px;
+  }
+
+  .menu--item {
+    margin-right: 15px;
+  }
+
+  .menu--item--text {
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-left: 5px;
+  }
+
+  footer {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 0.8rem;
+    display: block;
+  }
+
+  .footer--left-col,
+  .footer--right-col {
+    margin: 10px auto;
+  }
+
+  .footer-middle-col--range--wrapper {
+    display: none;
+  }
+
+  .footer--right-col {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .side-bar {
+    position: relative;
+  }
+
+  .navbar--link--toggle {
+    align-self: flex-end;
+    display: initial;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 30px;
+  }
+
+  .menu {
+    margin-left: 15px;
+    display: none;
+  }
+
+  .lower--nav {
+    display: none;
+  }
+
+  .navbar--toggleShow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-middle-col--range--wrapper {
+    display: none;
+  }
+
+  .footer--right-col {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 301px) {
+  .side-bar {
+    min-width: 280px;
+  }
+
+  footer {
+    min-width: 280px;
+    position: fixed;
+    bottom: 0;
+  }
+
+  .footer--middle-col--controls {
+    margin-right: 5px;
+  }
+
+  .footer--middle-col--range--input {
+    width: 80%;
+    -webkit-appearance: none;
+    background-color: #b3b3b3;
+    border-radius: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  .footer--right-col,
+  .footer--left-col {
+    display: none;
+  }
+
+  .navbar--toggleShow {
+    display: block;
+  }
+
+  .footer-middle-col--range--wrapper {
+    display: none;
+  }
+
+  .footer--right-col {
+    display: none;
+  }
+}
+
+.active {
+  border-bottom: 1px solid white;
+  color: #fff;
+}
+
+.navbar--link--toggle--rotate {
+  transform: rotate(-180deg);
+  transition: all ease 0.5s;
+}
