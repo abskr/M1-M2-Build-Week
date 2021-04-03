@@ -33,7 +33,9 @@
   color: white;
   border-bottom: 1px solid rgb(93, 197, 93);
 }
-
+.active {
+  border-left: 5px solid lightgreen;
+}
 /* h1 {
   color: white;
   margin-left: 100px;

@@ -1,0 +1,68 @@
+.logo-text {
+  font-size: 3rem;
+}
+
+.col-12.col-md-6.offset-md-3 {
+  margin-bottom: 0.5rem;
+}
+
+.login-main-text {
+  font-weight: 600;
+}
+
+button {
+  letter-spacing: 3px;
+}
+
+a {
+  color: #28a745;
+}
+#usernameInput {
+  position: relative;
+  background-color: rgb(59, 55, 57);
+  display: flex;
+  color: white;
+}
+#mail {
+  position: absolute;
+  top: 15px;
+  left: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+}
+#passwordInput {
+  position: relative;
+  background-color: rgb(59, 55, 57);
+  display: flex;
+  color: white;
+}
+#eye {
+  position: absolute;
+  top: 15px;
+  left: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+}
+#profileInput {
+  position: relative;
+  background-color: rgb(59, 55, 57);
+  display: flex;
+  color: white;
+}
+#person {
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+body {
+  background-color: black;
+  color: white;
+}
