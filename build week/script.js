@@ -1,22 +1,22 @@
-let previous = document.querySelector("#prev");
-let play = document.querySelector("#playBtn");
-let pause = document.querySelector("#pauseBtn");
-let next = document.querySelector("#next");
-let songImage = document.querySelector("#song-image");
-let songTitle = document.querySelector("#song-title");
-let artistName = document.querySelector("#artist-name");
-let currentDuration = document.querySelector("#currentDuration");
-let durationSlider = document.querySelector("#durationSlider");
-let maxDuration = document.querySelector("#maxDuration");
-let volumeIcon = document.querySelector("#volumeIcon");
-let volumeMuteIcon = document.querySelector("#volumeMuteIcon");
-let volumeSlider = document.querySelector("#volumeSlider");
+let previous = document.querySelector("#prev")
+let play = document.querySelector("#playBtn")
+let pause = document.querySelector("#pauseBtn")
+let next = document.querySelector("#next")
+let songImage = document.querySelector("#song-image")
+let songTitle = document.querySelector("#song-title")
+let artistName = document.querySelector("#artist-name")
+let currentDuration = document.querySelector("#currentDuration")
+let durationSlider = document.querySelector("#durationSlider")
+let maxDuration = document.querySelector("#maxDuration")
+let volumeIcon = document.querySelector("#volumeIcon")
+let volumeMuteIcon = document.querySelector("#volumeMuteIcon")
+let volumeSlider = document.querySelector("#volumeSlider")
 
-let timer;
+let timer
 
-let songId = 0;
-let songPlaying = false;
-let track = document.createElement("audio");
+let songId = 0
+let songPlaying = false
+let track = document.createElement("audio")
 
 let songs = (music = [
   {
@@ -49,108 +49,110 @@ let songs = (music = [
     img: "./navImages/image15.jpeg",
     singer: "Fifth Singer",
   },
-]);
+])
 
 function loadTrack(songId) {
-  resetValues();
-  setInterval(range_slider, 1000);
-  track.src = songs[songId].path;
-  songTitle.innerHTML = songs[songId].name;
-  artistName.innerHTML = songs[songId].singer;
-  songImage.src = songs[songId].img;
+  resetValues()
+  setInterval(range_slider, 1500)
+  track.src = songs[songId].path
+  songTitle.innerHTML = songs[songId].name
+  artistName.innerHTML = songs[songId].singer
+  songImage.src = songs[songId].img
 
-  track.load();
+  track.load()
 
   if (songPlaying) {
-    playSong();
+    playSong()
   }
 }
-loadTrack(songId);
+loadTrack(songId)
 
 function muteVolume() {
   if (track.volume === 0) {
-    track.volume = volumeSlider.value / 100;
-    volumeMuteIcon.style.display = "none";
-    volumeIcon.style.display = "inline";
+    track.volume = volumeSlider.value / 100
+    volumeMuteIcon.style.display = "none"
+    volumeIcon.style.display = "inline"
   } else {
-    track.volume = 0;
-    volumeIcon.style.display = "none";
-    volumeMuteIcon.style.display = "inline";
+    track.volume = 0
+    volumeIcon.style.display = "none"
+    volumeMuteIcon.style.display = "inline"
   }
 }
 
 function playSong() {
-  maxDuration.textContent = "00:00";
-  play.style.display = "none";
-  pause.style.display = "inline";
-  songPlaying = true;
+  play.style.display = "none"
+  pause.style.display = "inline"
+  songPlaying = true
 
-  track.play();
-  maxDuration.textContent = formatTime(track.duration);
+  track.play()
 }
 
 function pauseSong() {
-  play.style.display = "inline";
-  pause.style.display = "none";
+  play.style.display = "inline"
+  pause.style.display = "none"
   if (songPlaying) {
-    track.pause();
-    songPlaying = false;
+    track.pause()
+    songPlaying = false
   }
 }
 
 function nextSong() {
   if (songId < songs.length - 1) {
-    songId++;
+    songId++
   } else {
-    songId = 0;
+    songId = 0
   }
 
-  loadTrack(songId);
+  loadTrack(songId)
 }
 
 function previousSong() {
   if (songId > 0) {
-    songId--;
+    songId--
   } else {
-    songId = songs.length - 1;
+    songId = songs.length - 1
   }
-  loadTrack(songId);
+  loadTrack(songId)
 }
 
 function changeVolume() {
-  track.volume = volumeSlider.value / 100;
+  track.volume = volumeSlider.value / 100
 }
 
 function changeDuration() {
-  track.currentTime = track.duration * (durationSlider.value / 100);
-  currentDuration.innerHTML = formatTime(track.currentTime);
+  track.currentTime = track.duration * (durationSlider.value / 100)
+  currentDuration.innerHTML = formatTime(track.currentTime)
 }
 function range_slider() {
-  let position = 0;
+  let position = 0
 
   if (!isNaN(track.duration)) {
-    position = track.currentTime * (100 / track.duration);
-    durationSlider.value = position;
-    currentDuration.textContent = formatTime(track.currentTime);
+    position = track.currentTime * (100 / track.duration)
+    durationSlider.value = position
+    currentDuration.textContent = formatTime(track.currentTime)
   }
 
   if (track.ended) {
-    playBtn.style.display = "inline";
-    pauseBtn.style.display = "none";
+    playBtn.style.display = "inline"
+    pauseBtn.style.display = "none"
   }
 }
 
 function formatTime(seconds) {
-  let min = Math.floor(seconds / 60);
-  let sec = Math.floor(seconds - min * 60);
+  let min = Math.floor(seconds / 60)
+  let sec = Math.floor(seconds - min * 60)
   if (sec < 10) {
-    sec = `0${sec}`;
+    sec = `0${sec}`
   }
-  return `${min}:${sec}`;
+  return `${min}:${sec}`
 }
 
 function resetValues() {
-  currentDuration.textContent = "00:00";
-  maxDuration.textContent = "00:00";
-  durationSlider.value = 0;
+  currentDuration.textContent = "00:00"
+  if (!isNaN(track.duration)) {
+    maxDuration.innerHTML = formatTime(track.duration)
+  } else {
+    maxDuration.innerHTML = `2:46`
+  }
+  durationSlider.value = 0
 }
